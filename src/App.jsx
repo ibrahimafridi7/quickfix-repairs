@@ -69,7 +69,7 @@ const Footer = ({ t }) => {
           <div className="footer-column">
             <h4>{t.contact_title}</h4>
             <ul className="footer-contact">
-              <li><Phone size={16} /> {t.footer_phone}</li>
+              <li><Phone size={16} /> <a href={`tel:${t.footer_phone.replace(/\D/g, '')}`}>{t.footer_phone}</a></li>
               <li><Mail size={16} /> {t.footer_email}</li>
               <li><MapPin size={16} /> {t.footer_address}</li>
             </ul>
@@ -100,7 +100,7 @@ const Home = ({ t }) => {
           <h1 className="hero-heading">{t.hero_heading}</h1>
           <p className="hero-subheading">{t.hero_subheading}</p>
           <div className="hero-action-simple">
-            <a href={`tel:${t.footer_phone}`} className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', width: 'auto', textDecoration: 'none' }}>
+            <a href={`tel:${t.footer_phone.replace(/\D/g, '')}`} className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', width: 'auto', textDecoration: 'none' }}>
               <Phone size={20} />
               <span>{t.btn_call_now}</span>
             </a>
@@ -225,9 +225,9 @@ const Home = ({ t }) => {
         </div>
       </section>
 
-      <a href="tel:5551234567" className="floating-call">
+      <a href={`tel:${t.footer_phone.replace(/\D/g, '')}`} className="floating-call">
         <Phone size={20} />
-        <span>Call Now</span>
+        <span>{t.btn_call_now}</span>
       </a>
     </main>
   );
@@ -281,7 +281,7 @@ const Contact = ({ t }) => {
           <div className="footer-column">
             <h4>{t.contact_title}</h4>
             <ul className="footer-contact">
-              <li><Phone size={20} /> {t.footer_phone}</li>
+              <li><Phone size={20} /> <a href={`tel:${t.footer_phone.replace(/\D/g, '')}`}>{t.footer_phone}</a></li>
               <li><Mail size={20} /> {t.footer_email}</li>
               <li><MapPin size={20} /> {t.footer_address}</li>
             </ul>
